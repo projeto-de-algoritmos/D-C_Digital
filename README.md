@@ -21,7 +21,7 @@ Temas:
 |Matrícula | Aluno |
 | -- | -- |
 | 19/0045485  |  Eduardo Gurgel |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 20/0043144 | Ricardo de Castro Loureiro
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
