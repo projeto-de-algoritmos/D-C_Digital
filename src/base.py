@@ -1,25 +1,16 @@
+import os
 import cv2
 
-img = cv2.imread('mic.jpg', 0)
+sample = cv2.imread("img.png")
 
+best_score = 0
+filename = None
+image = None
 
-img = cv2.medianBlur(img, 5)
+kp1, kp2, mp = None, None, None
 
-
-image = cv2.adaptiveThreshold(
-    img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
-
-
-
-ratio = len(image) / len(image[0])
-
-new_width = 60
-new_height = int(ratio * new_width)
-
-image = cv2.resize(image, (new_height, new_width))
-
-
-for i in range(len(image)):
-    for j in range(len(image[0])):
-        print("o" if image[i, j] < 100 else ".", end="")
-    print()
+for file in [file for file in os.listdir("/real")][:1000]:
+	fingerprint_image = cv2.imread("/real/" + file)
+	sift = cv2.SIFT_create()
+	keypoints_1, descriptors_1 = sift.detectionAndCompute(sample, None)
+	keypoints_2, descriptors_2 = sift.detectAndCompute(fingerprint_image, None)
