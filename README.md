@@ -44,9 +44,13 @@ Para usar a aplicação, será necessário instalar duas bibliotecas, executando
   https://github.com/projeto-de-algoritmos/D-C_Digital
   ```
   
-  * Instalar as bibliotecas
+ * Instalar as bibliotecas
   ```
 - pip install cv2
+  ```
+ * Baixar o Dataset
+  ```
+ https://www.kaggle.com/datasets/ruizgara/socofing
   ```
   
  * Executar o projeto
