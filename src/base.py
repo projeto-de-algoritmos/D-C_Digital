@@ -12,7 +12,7 @@ chave1, chave2, mp = None, None, None
 
 contador = 0
 
-# Cria os pares de pontos
+#Cria os pares de pontos
 for file in [file for file in os.listdir("SOCOFing/Real")][:1000]:
 
 	imagem_digital = cv2.imread("SOCOFing/Real/" + file)
@@ -28,3 +28,14 @@ for file in [file for file in os.listdir("SOCOFing/Real")][:1000]:
 
 	verifica_pontos = []
 
+
+# Distância mínima entre os dois pontos
+	for p, q in compara:
+		if p.distance < 0.1 * q.distance:
+			verifica_pontos.append(p)
+
+	pontochave = 0
+	if len(pontochave_1) < len(pontochave_2):
+		pontochave = len(pontochave_1)
+	else:
+		pontochave = len(pontochave_2)
