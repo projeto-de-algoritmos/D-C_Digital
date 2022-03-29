@@ -41,7 +41,7 @@ Para usar a aplicação, será necessário instalar duas bibliotecas, executando
 
  * Clonar o repositório
   ```
-  https://github.com/projeto-de-algoritmos/Greed_Compress
+  https://github.com/projeto-de-algoritmos/D-C_Digital
   ```
   
   * Instalar as bibliotecas
