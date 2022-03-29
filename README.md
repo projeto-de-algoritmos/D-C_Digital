@@ -13,7 +13,7 @@
 | 20/0043111 |  Ricardo Loureiro |
 
 ## Sobre 
-A aplicação tem como objetivo utilizar um dataset de digitais combinado com o uso do algoritmo Closest Pair of Points para calcular uma pontuação entre par de pontos em uma impressão digital
+A aplicação tem como objetivo utilizar um dataset de digitais combinado com o uso do algoritmo Closest Pair of Points para calcular uma pontuação entre a similaridade entre duas impressões digitais, utilizando um par de pontos.
 
 ## Screenshots
 Closest Pair of Points
