@@ -1,16 +1,30 @@
 import os
 import cv2
 
-sample = cv2.imread("img.png")
+imagem_dataset = cv2.imread("SOCOFing/Altered/Altered-Hard/150__M_Right_index_finger_Obl.BMP")
 
-best_score = 0
-filename = None
+melhor_pontuacao = 0
+nomearquivo = None
 image = None
 
-kp1, kp2, mp = None, None, None
+# Chaves compara
+chave1, chave2, mp = None, None, None
 
-for file in [file for file in os.listdir("/real")][:1000]:
-	fingerprint_image = cv2.imread("/real/" + file)
+contador = 0
+
+# Cria os pares de pontos
+for file in [file for file in os.listdir("SOCOFing/Real")][:1000]:
+
+	imagem_digital = cv2.imread("SOCOFing/Real/" + file)
 	sift = cv2.SIFT_create()
-	keypoints_1, descriptors_1 = sift.detectionAndCompute(sample, None)
-	keypoints_2, descriptors_2 = sift.detectAndCompute(fingerprint_image, None)
+
+	pontochave_1, descriptors_1 = sift.detectAndCompute(imagem_dataset, None)
+	pontochave_2, descriptors_2 = sift.detectAndCompute(imagem_digital, None)
+
+
+	compara = cv2.FlannBasedMatcher({'algorithm': 1, 'trees': 10},
+									{}).knnMatch(descriptors_1, descriptors_2, k=2)
+
+
+	verifica_pontos = []
+
