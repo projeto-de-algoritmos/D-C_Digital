@@ -39,3 +39,20 @@ for file in [file for file in os.listdir("SOCOFing/Real")][:1000]:
 		pontochave = len(pontochave_1)
 	else:
 		pontochave = len(pontochave_2)
+
+# Calcula a pontuação de acordo com a distância dos pontos
+	if len(verifica_pontos) / pontochave * 100 > melhor_pontuacao:
+		melhor_pontuacao = len(verifica_pontos) / pontochave * 100
+		nomearquivo = file
+		image = imagem_digital
+		chave1, chave2, mp = pontochave_1, pontochave_2, verifica_pontos
+
+
+print("Melhor comparação: " + nomearquivo)
+print("Pontuação: " + str(melhor_pontuacao))
+
+resultado = cv2.drawMatches(imagem_dataset, chave1, image, chave2, mp, None)
+resultado = cv2.resize(resultado, None, fx=4, fy=4)
+cv2.imshow("resultado", resultado)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
