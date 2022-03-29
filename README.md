@@ -1,4 +1,4 @@
-# Compress
+# Closest Pair of Points
 
 
 
